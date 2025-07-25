@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect,useRef } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import FeedbackSection from '../../Compontent/FeedbackForm/FeedbackForm';
 
 const categories = [
   {
@@ -63,6 +64,24 @@ const categories = [
 const Home = () => {
   const [showAll, setShowAll] = useState(false);
   const visibleCategories = showAll ? categories : categories.slice(0, 6);
+const feedbackRef = useRef(null);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const section = feedbackRef.current;
+    if (!section) return;
+
+    const sectionTop = section.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (sectionTop < screenHeight - 100) {
+      section.classList.add("visible");
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <div className="container">
@@ -97,6 +116,10 @@ const Home = () => {
         {showAll ? "Show Less" : "Show All"}
       </button>
       </div>
+      {/* Feedback Section */}
+<FeedbackSection />
+
+
     </div>
 
   );
