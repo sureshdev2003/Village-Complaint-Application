@@ -1,25 +1,35 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './Compontent/Header/Header';
 import ComplaintForm from './Pages/ComplaintForm/ComplaintForm';
 import Home from './Pages/Home/Home';
-// import Complaints from './pages/Complaints';
-// import Status from './pages/Status';
-// import About from './pages/About';
-// import Contact from './pages/Contact';
+import Login from './Compontent/Login/Login';
+import Register from './Compontent/Register/Register';
+import Status from './Pages/Status/status';
+
+const AppLayout = () => {
+  const location = useLocation();
+  const hideHeaderRoutes = ['/login','/register'];
+  const shouldHideHeader = hideHeaderRoutes.includes(location.pathname);
+
+  return (
+    <>
+      {!shouldHideHeader && <Header />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/complaint/:category" element={<ComplaintForm />} />
+        <Route path="/login" element={<Login />} />
+         <Route path="/register" element={<Register />} />
+         <Route path='/status' element={<Status/>}/>
+      </Routes>
+    </>
+  );
+};
 
 function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/complaints" element={<Complaints />} />
-        <Route path="/status" element={<Status />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} /> */}
-        <Route path="/complaint/:category" element={<ComplaintForm />} />
-      </Routes>
+      <AppLayout />
     </Router>
   );
 }

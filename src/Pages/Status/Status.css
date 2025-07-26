@@ -1,0 +1,29 @@
+.status-page {
+  height: 100vh;
+  background: linear-gradient(135deg, #1b2735, #090a0f);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+.status-box {
+  padding: 20px 40px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.progress {
+  background-color: #ff4d4d; /* red */
+  color: white;
+}
+
+.delivered {
+  background-color: #2ecc71; /* green */
+  color: white;
+}

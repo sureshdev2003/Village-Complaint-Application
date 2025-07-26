@@ -1,0 +1,138 @@
+.register-body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1b2735, #090a0f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.cube {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  animation: rotateCube 15s infinite linear;
+  top: 20%;
+  left: 10%;
+  transform-style: preserve-3d;
+  z-index: 0;
+}
+
+.cube.delay {
+  top: 50%;
+  left: 60%;
+  animation-delay: 3s;
+}
+
+.cube.delay2 {
+  top: 70%;
+  left: 30%;
+  animation-delay: 6s;
+}
+
+@keyframes rotateCube {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg) translateZ(0);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(360deg) translateZ(100px);
+  }
+}
+
+.glass-form {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  width: 340px;
+  color: #fff;
+  text-align: center;
+  animation: floatUp 1.2s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes floatUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glass-form h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.glass-form form input,
+.glass-form form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.glass-form form input:focus,
+.glass-form form select:focus {
+  border-bottom: 1px solid #00ffff;
+}
+
+.glass-form form select {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+.glass-form form select option {
+ background-color: #555;
+}
+.glass-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: linear-gradient(45deg, #00c9ff, #92fe9d);
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.glass-form button:hover {
+  background: linear-gradient(45deg, #92fe9d, #00c9ff);
+}
+
+.login-link {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.login-link a {
+  color: #00ffff;
+  text-decoration: none;
+}
