@@ -2,6 +2,7 @@ import React, { useState,useEffect,useRef } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import FeedbackSection from '../../Compontent/FeedbackForm/FeedbackForm';
+import logo from "../../assets/Tamil_nadu_Emblem.png"
 
 const categories = [
   {
@@ -86,17 +87,18 @@ useEffect(() => {
   return (
     <div className="container">
       {/* Slider */}
-      <div className="slider-container">
-        <div className="slider">
-          <div className="slide bg1"></div>
-          <div className="slide bg2"></div>
-          <div className="slide bg3"></div>
-        </div>
-        <div className="content">
-          <h1>Welcome to Our Website</h1>
-          <p>Empowering Villages Through Technology</p>
-        </div>
-      </div>
+   <div className="slider-container">
+  <div className="slider">
+    <div className="slide bg1"></div>
+    <div className="slide bg2"></div>
+ 
+  </div>
+  <div className="content">
+    <h1>If Your City Or Village Is Not Clean and Any Issues, Report It!</h1>
+    <p>Can 't find your issue? Report it anyway! We will help you to find the solution. Within 7 days, we will contact you to know the status of your report.</p>
+  </div>
+</div>
+
 
       {/* Categories */}
       <div className="category">
@@ -117,9 +119,40 @@ useEffect(() => {
       </button>
       </div>
       {/* Feedback Section */}
-<FeedbackSection />
+       <FeedbackSection />
 
 
+
+     {/* footer */}
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-logo-section">
+            <img src={logo} alt="Logo" className="footer-logo" />
+            <p className="footer-tagline">Your voice, our action.</p>
+          </div>
+          <div className="footer-section">
+            <h3>About Us</h3>
+            <p>We are committed to resolving public complaints efficiently and transparently.</p>
+          </div>
+          <div className="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/report">Report Issue</a></li>
+              <li><a href="/categories">Categories</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            <h3>Contact</h3>
+            <p>Email: support@complaintportal.com</p>
+            <p>Phone: +91 98765 43210</p>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>© 2025 Complaint Portal. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
 
   );

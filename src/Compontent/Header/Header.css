@@ -44,7 +44,12 @@
 }
 
 .nav-links a:hover {
-  color: #ffcc00;
+  background: linear-gradient(45deg, #00c9ff, #92fe9d) ;
+   background: linear-gradient(90deg, #00c6ff, #92fe9d); /* Adjust colors here */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* fallback for modern browsers */
+  color: transparent;
 }
 
 /* Responsive */
@@ -73,5 +78,15 @@
   }
 }
 
+.header-btn{
+  padding: 15px 20px;
+  color: #000;
+  background: linear-gradient(45deg, #00c9ff, #92fe9d) ;
+  border: none;
+  width: 120px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
 
+}
 

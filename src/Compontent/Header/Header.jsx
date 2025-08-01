@@ -1,13 +1,15 @@
 // src/components/header.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import './Header.css';
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
+  const Navigate = useNavigate();
 
   return (
     <header className="navbar">
@@ -25,6 +27,7 @@ const Header = () => {
           <Link to="/about" onClick={closeMenu}>About</Link>
           <Link to="/contact" onClick={closeMenu}>Contact</Link>
         </nav>
+        <button className='header-btn' onClick={()=>{Navigate('/login')}}>Login</button>
       </div>
     </header>
   );
