@@ -27,7 +27,10 @@ const Header = () => {
           <Link to="/about" onClick={closeMenu}>About</Link>
           <Link to="/contact" onClick={closeMenu}>Contact</Link>
         </nav>
-        <button className='header-btn' onClick={()=>{Navigate('/login')}}>Login</button>
+        <div className="header-buttons">
+          <button className='header-btn admin-btn' onClick={()=>{Navigate('/admin/login')}}>Admin</button>
+          <button className='header-btn' onClick={()=>{Navigate('/login')}}>Login</button>
+        </div>
       </div>
     </header>
   );

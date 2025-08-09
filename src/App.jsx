@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home';
 import Login from './Compontent/Login/Login';
 import Register from './Compontent/Register/Register';
 import Status from './Pages/Status/status';
+import AdminApp from './Admin/AdminApp';
 
 const AppLayout = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const AppLayout = () => {
         <Route path="/login" element={<Login />} />
          <Route path="/register" element={<Register />} />
          <Route path='/status' element={<Status/>}/>
+         <Route path="/admin/*" element={<AdminApp />} />
       </Routes>
     </>
   );

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import "./ComplaintForm.css";
 
@@ -12,6 +12,8 @@ const ComplaintForm = () => {
     complaint: '',
     photos: [],
   });
+
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -32,11 +34,11 @@ const ComplaintForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can send formData to backend here using FormData or fetch
+  const handleSubmit = () => {
+    // Simulate sending to backend
     console.log('Submitted Data:', formData);
     alert('Complaint Submitted Successfully!');
+    setSubmitted(true);
     setFormData({
       name: '',
       phone: '',
@@ -46,10 +48,20 @@ const ComplaintForm = () => {
     });
   };
 
+  // Auto-submit once 3 images are uploaded
+  useEffect(() => {
+    if (formData.photos.length === 3) {
+      handleSubmit();
+    }
+  }, [formData.photos]);
+
   return (
-    <div className="complaint-form-container">
-      <h2>Complaint Form for: {category.replace(/-/g, " ")}</h2>
-      <form className="complaint-form" onSubmit={handleSubmit}>
+   <div className="complaint-form-container">
+  <h2>Complaint Form for: {category.replace(/-/g, " ")}</h2>
+
+  {!submitted ? (
+    <div className="form-layout">
+      <form className="complaint-form" onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
           name="name"
@@ -99,7 +111,24 @@ const ComplaintForm = () => {
 
         <button type="submit">Submit Complaint</button>
       </form>
+
+      {/* Preview section beside the form */}
+      <div className="photo-preview-vertical">
+        {formData.photos.map((file, idx) => (
+          <img
+            key={idx}
+            src={URL.createObjectURL(file)}
+            alt={`preview-${idx}`}
+            className="preview-img-vertical"
+          />
+        ))}
+      </div>
     </div>
+  ) : (
+    <p className="submitted-msg">Thank you! Your complaint has been submitted.</p>
+  )}
+</div>
+
   );
 };
 

@@ -142,6 +142,7 @@ useEffect(() => {
               <li><a href="/categories">Categories</a></li>
               <li><a href="/contact">Contact</a></li>
             </ul>
+            
           </div>
           <div className="footer-section">
             <h3>Contact</h3>

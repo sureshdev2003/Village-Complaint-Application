@@ -45,11 +45,18 @@
 
 .nav-links a:hover {
   background: linear-gradient(45deg, #00c9ff, #92fe9d) ;
-   background: linear-gradient(90deg, #00c6ff, #92fe9d); /* Adjust colors here */
+  background: linear-gradient(90deg, #00c6ff, #92fe9d); /* Adjust colors here */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text; /* fallback for modern browsers */
   color: transparent;
+}
+
+/* Header Buttons Container */
+.header-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 /* Responsive */
@@ -76,6 +83,10 @@
   .nav-links a {
     margin: 10px 0;
   }
+
+  .header-buttons {
+    gap: 5px;
+  }
 }
 
 .header-btn{
@@ -87,6 +98,21 @@
   border-radius: 10px;
   cursor: pointer;
   font-size: 20px;
+}
 
+.admin-btn {
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+  color: #000;
+}
+
+.admin-btn:hover {
+  background: linear-gradient(45deg, #ff5252, #ffc107);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.header-btn:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
