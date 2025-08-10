@@ -1,0 +1,249 @@
+.my-complaints-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 80vh;
+}
+
+.my-complaints-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.no-complaints {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.no-complaints p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.no-complaints a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.no-complaints a:hover {
+  text-decoration: underline;
+}
+
+.complaints-list {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.complaint-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.complaint-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.complaint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.complaint-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.4rem;
+  flex: 1;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.complaint-details {
+  margin-bottom: 15px;
+}
+
+.complaint-details p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.complaint-details strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.complaint-description {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.complaint-description p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.assignment-info {
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  background-color: #e7f3ff;
+  border-radius: 8px;
+  border-left: 4px solid #2196f3;
+}
+
+.assignment-info p {
+  margin: 0;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.complaint-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.track-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.track-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.page-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.page-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.page-info {
+  font-weight: 600;
+  color: #333;
+  padding: 0 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .my-complaints-container {
+    padding: 15px;
+  }
+
+  .my-complaints-container h2 {
+    font-size: 2rem;
+  }
+
+  .complaint-card {
+    padding: 20px;
+  }
+
+  .complaint-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .complaint-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .complaint-actions {
+    justify-content: center;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .complaint-card {
+    padding: 15px;
+  }
+
+  .complaint-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .status-badge {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+} 
